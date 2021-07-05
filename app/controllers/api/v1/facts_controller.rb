@@ -23,6 +23,27 @@ module Api
         end    
       end
 
+      def destroy
+        fact = Fact.find_by(slug: params[:slug])
+
+        if fact.destroy
+          head :no_content
+        else
+          render json: {error: fact.errors.messages}, status: 422
+        end
+
+      end
+
+      def update
+        fact = Fact.find_by(slug: params[:slug])
+
+        if fact.update(fact_params)
+          render json: fact, adapter: :json_api, status: 200
+        else
+          render json: {error: fact.errors.messages}, status: 422
+        end
+
+      end
 
       private
 
