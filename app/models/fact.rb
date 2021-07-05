@@ -1,6 +1,6 @@
 class Fact < ApplicationRecord
   belongs_to :category
-  has_many :keywords
+  has_many :keyword_facts
   before_create :slugify
 
   def slugify

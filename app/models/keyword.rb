@@ -1,3 +1,3 @@
 class Keyword < ApplicationRecord
-  belongs_to :fact
+  has_many :keyword_facts
 end
