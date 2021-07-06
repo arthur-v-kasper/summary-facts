@@ -4,5 +4,5 @@ class Keyword < ApplicationRecord
 
   def lowerfy
     self.word = word.downcase
-  end
+  end  
 end

@@ -15,7 +15,7 @@ module Api
 
       def create
         fact = Fact.new(fact_params)
-
+        # nested atributes
         if fact.save
           render json: fact, adapter: :json_api
         else
@@ -48,7 +48,9 @@ module Api
       private
 
       def fact_params
-        params.require(:fact).permit(:title, :summary, :image_url, :website_origin, :category_id)
+        params.require(:fact).permit(
+          :title, :summary, :image_url, :website_origin, :category_id,
+          keyword_facts_attributes:[{ keywords_attributes: :word } ])
       end
     end
   end
