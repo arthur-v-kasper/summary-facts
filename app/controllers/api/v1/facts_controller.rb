@@ -17,7 +17,7 @@ module Api
         fact = Fact.new(fact_params)
         # nested atributes
         if fact.save
-          render json: fact, adapter: :json_api
+          render json: fact, adapter: :json_api, status: 201
         else
           render json: {error: fact.errors.messages}, status: 422
         end    
