@@ -10,7 +10,7 @@ module Api
 
       def show
         fact = Fact.find_by(slug: params[:slug])
-        render json: fact, adapter: :json_api
+        render json: fact.to_json(include: :keywords), adapter: :json_api
       end
 
       def create
