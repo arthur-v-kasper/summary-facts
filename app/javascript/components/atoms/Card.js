@@ -30,7 +30,7 @@ const KeywordsList = styled.ul`
 `
 const Keyword = styled.li`
   list-style: none;
-  color: #a9a9a9;
+  color: #727370;
   margin-right: 10px;
 `
 
@@ -44,17 +44,17 @@ const Button = styled.button`
   border-radius: 4px;
 `
 
-const ButtonWrapperButton = styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
 `
 
 
-const Card = () => (
+const Card = ({ title, image}) => (
   <Container>
-    <Image image="https://cdn.artandlogic.com/wp-content/uploads/graphQl.png" />
+    <Image image={image} />
     <Body>
-      <Titulo>Meu titulo super chamativo!!</Titulo>      
+      <Titulo>{title}</Titulo>      
       <KeywordsWrapper>
         <KeywordsList>
           <Keyword>#javascript</Keyword>
@@ -62,9 +62,9 @@ const Card = () => (
           <Keyword>#query</Keyword>
         </KeywordsList>
       </KeywordsWrapper>
-      <ButtonWrapperButton>
+      <ButtonWrapper>
         <Button> View Summary </Button>
-      </ButtonWrapperButton>
+      </ButtonWrapper>
     </Body>    
   </Container>
 );

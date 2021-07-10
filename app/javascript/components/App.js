@@ -1,13 +1,19 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import CardGrid from "./organisms/CardGrid";
+import GlobalStyleComponet from "../style/Globalstyle";
+import Navbar from "./atoms/Navbar";
 
 const App = () => (
-  <Router>
-    <Switch>
-      <Route path="/" component={CardGrid} />
-    </Switch>
-  </Router>
+  <>
+    <GlobalStyleComponet />
+    <Navbar />
+    <Router>
+      <Switch>
+        <Route path="/" render={() => <CardGrid widthItem="400" />}  />
+      </Switch>
+    </Router>
+  </>
 );
 
 
